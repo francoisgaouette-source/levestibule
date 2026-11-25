@@ -42,17 +42,15 @@ Sans `supabaseUrl` dans `web/config.js`, l'app roule en mode démonstration (don
 
 - Projet Supabase **Le Vestibule** (`jjvwwstovcrqodridfuu`, Canada) : tables, sécurité, temps réel et rappel aux 15 minutes installés; fonctions `extraire`, `courriel-ecole`, `rappel`, `calendrier` et `stripe-webhook` déployées (sans vérification JWT). Adresse et clé publique dans `web/config.js`. Secrets `ANTHROPIC_API_KEY` et `COURRIEL_SECRET` enregistrés.
 - Connexion par compte HoldingAI : Third-Party Auth > Custom OIDC (émetteur `https://wwakxuzuhmdmweluafiz.supabase.co/auth/v1`) activé sur le projet Le Vestibule.
+- En ligne : https://levestibule.ai (site) et https://app.levestibule.ai (app), Cloudflare Pages **le-vestibule** relié à ce dépôt (sortie `web`, sans build).
+- Worker **levestibule-courriel** relié à ce dépôt (Workers Builds) ; `SUPABASE_URL` dans `wrangler.jsonc`. Email Routing de levestibule.ai actif : DNS en place, règle catch-all → ce Worker.
 - App inscrite dans HoldingAI Compte (`le-vestibule`, personnage Lucie, client OAuth public `7a34d46b-ee67-4e92-8b24-5e7f5124a77a`, retour https://app.levestibule.ai/).
 
-À faire, dans l'ordre :
+À faire :
 
-1. **Domaine** : acheter `levestibule.ai` dans Cloudflare (vérifier qu'il est libre).
-2. **GitHub** : créer le dépôt `levestibule` et y pousser ce dossier.
-3. **Supabase** : fait (voir plus haut). Reste `STRIPE_WEBHOOK_SECRET` quand Stripe est prêt. Pour redéployer une fonction : `supabase functions deploy <nom> --no-verify-jwt --project-ref jjvwwstovcrqodridfuu`.
-4. **HoldingAI Compte** : fait.
-5. **Cloudflare Pages** : projet **le-vestibule** relié au dépôt, dossier de sortie `web`, aucune commande de build. Domaines : `levestibule.ai`, `www.levestibule.ai`, `app.levestibule.ai`.
-6. **Courriels** : `npx wrangler deploy` (Worker `levestibule-courriel`), secrets `SUPABASE_URL`, `COURRIEL_SECRET` (le même que Supabase) et `COPIE_COURRIEL` (où envoyer bonjour@levestibule.ai). Puis Email Routing du domaine : règle **catch-all** vers ce Worker.
-7. **Stripe** : lien de paiement à 19,99 $ (+ taxes), à mettre dans `STRIPE` de `tools/site.py` (puis `python3 tools/site.py`). Webhook : `https://VOTRE-PROJET.supabase.co/functions/v1/stripe-webhook`, événement `checkout.session.completed`.
+1. **Secret du Worker** `levestibule-courriel` : `COURRIEL_SECRET` (la même valeur que dans Supabase), dans Settings > Variables and Secrets, type Secret. Facultatif : `COPIE_COURRIEL`.
+2. **Stripe** : lien de paiement à 19,99 $ (+ taxes), à mettre dans `STRIPE` de `tools/site.py` (puis `python3 tools/site.py` et push). Webhook : `https://jjvwwstovcrqodridfuu.supabase.co/functions/v1/stripe-webhook`, événement `checkout.session.completed`, secret `STRIPE_WEBHOOK_SECRET` dans Supabase.
+3. Faire relire conditions et confidentialité.
 
 ## Mise en ligne (automatique, une fois branché)
 
