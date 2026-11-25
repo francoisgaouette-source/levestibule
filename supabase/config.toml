@@ -1,0 +1,15 @@
+# Le Vestibule : les fonctions vérifient elles-mêmes l'accès (jeton HoldingAI, secret du courriel, signature Stripe ou secret du cron)
+[functions.extraire]
+verify_jwt = false
+
+[functions.courriel-ecole]
+verify_jwt = false
+
+[functions.rappel]
+verify_jwt = false
+
+[functions.calendrier]
+verify_jwt = false
+
+[functions.stripe-webhook]
+verify_jwt = false
