@@ -1,10 +1,12 @@
 // Le Vestibule : l'app et le site sont servis par Cloudflare Pages (projet « le-vestibule », relié au dépôt).
 // Ce Worker ne sert qu'à RECEVOIR les courriels de l'école (Pages ne peut pas recevoir de courriel) :
 //   famille-<code>@levestibule.ai → Email Routing, règle « catch-all » → ce Worker → fonction Supabase courriel-ecole.
-// Secrets du Worker : SUPABASE_URL, COURRIEL_SECRET, COPIE_COURRIEL (facultatif : où envoyer bonjour@levestibule.ai).
+// Secrets du Worker (Settings > Variables and Secrets) : COURRIEL_SECRET, COPIE_COURRIEL (facultatif : où envoyer bonjour@levestibule.ai).
+// Mise en ligne : Cloudflare Workers Builds, à chaque push sur main.
 {
   "name": "levestibule-courriel",
   "main": "worker/index.js",
   "compatibility_date": "2026-11-01",
-  "workers_dev": false
+  "workers_dev": false,
+  "vars": { "SUPABASE_URL": "https://jjvwwstovcrqodridfuu.supabase.co" }
 }
