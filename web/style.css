@@ -72,7 +72,7 @@ nav.onglets a.on{color:var(--ink);box-shadow:inset 0 3px 0 var(--lamp)}
 .accueil .lucie{width:72px;height:72px;margin-bottom:14px}
 .moment{display:flex;gap:12px;align-items:flex-start}
 .moment .qui{font-size:13px;font-weight:800;color:var(--lamp);margin-bottom:2px}
-/* Compte HoldingAI (bouton d'Albert, dessiné par porte.js) */
+/* Compte HoldingAI (bouton de Philou, dessiné par porte.js) */
 .hero .hai-porte-btn{position:absolute;top:calc(14px + env(safe-area-inset-top));right:14px;z-index:3}
 /* Forfait */
 .bandeau .btn{min-height:36px;font-size:14px;padding:0 12px}
