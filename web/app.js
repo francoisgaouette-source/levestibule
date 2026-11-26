@@ -307,7 +307,7 @@
     <div class="card"><h2>La famille</h2>
       <h3>Enfants</h3><ul class="list">${S.enfants.map((e) => `<li><div class="grow t">${esc(e.prenom)}</div><button class="icon" data-a="enf-suppr" data-id="${esc(e.id)}" aria-label="Retirer">×</button></li>`).join("")}</ul>
       <div class="row"><input id="enf-p" placeholder="Prénom" maxlength="40"><button class="ghost" data-a="enf-ajout">Ajouter</button></div>
-      <h3>Coparent</h3><ul class="list">${S.membres.map((m) => `<li><div class="grow"><div class="t">${esc(m.id === moi.id ? (m.prenom || "Moi") + " (vous)" : m.prenom || "Coparent")}</div>${m.user_id ? "" : `<div class="muted">Invité : ${esc(m.telephone || "")}. Il se connecte avec son compte HoldingAI, sur ce numéro.</div>`}</div>${m.id === moi.id ? "" : `<button class="icon" data-a="mem-suppr" data-id="${esc(m.id)}" aria-label="Retirer">×</button>`}</li>`).join("")}</ul>
+      <h3>Coparent</h3><ul class="list">${S.membres.map((m) => `<li><div class="grow"><div class="t">${esc(m.id === moi.id ? (m.prenom || "Moi") + " (vous)" : m.prenom || "Coparent")}</div>${m.user_id ? "" : `<div class="muted">Invité : ${esc(m.telephone || "")}. Il se connecte avec son compte L’Établi, sur ce numéro.</div>`}</div>${m.id === moi.id ? "" : `<button class="icon" data-a="mem-suppr" data-id="${esc(m.id)}" aria-label="Retirer">×</button>`}</li>`).join("")}</ul>
       ${S.membres.length < 4 ? `<div class="row"><input id="mem-p" placeholder="Prénom" style="flex:0 1 140px" maxlength="40"><input id="mem-t" type="tel" placeholder="Cellulaire" autocomplete="off"><button class="ghost" data-a="mem-ajout">Inviter</button></div>` : ""}
       <p class="muted" style="margin-top:8px">Vous voyez tous les deux les mêmes éléments, et chacun peut en prendre un. Ce que vous déposez du travail reste à vous.</p></div>
 
@@ -332,7 +332,7 @@
     ${blocForfait()}
     <div class="card"><h2>${DEMO ? "Mode démo" : "Compte"}</h2>
       ${DEMO ? `<p class="muted">Les données d'exemple restent sur cet appareil.</p><div class="row"><button class="ghost" data-a="demo-vider">Tout effacer</button><button class="ghost" data-a="demo-exemple">Remettre l'exemple</button></div>`
-        : `<p class="muted">Fuseau horaire : ${esc(f.fuseau)}</p><div class="row"><button class="ghost" type="button" data-hai-inviter>Inviter quelqu'un</button><button class="ghost" data-a="deconnexion">Se déconnecter</button><a class="btn ghost" href="${esc(HoldingAI.compteUrl)}" target="_blank" rel="noopener">Mon compte HoldingAI</a></div>`}</div>`;
+        : `<p class="muted">Fuseau horaire : ${esc(f.fuseau)}</p><div class="row"><button class="ghost" type="button" data-hai-inviter>Inviter quelqu'un</button><button class="ghost" data-a="deconnexion">Se déconnecter</button><a class="btn ghost" href="${esc(HoldingAI.compteUrl)}" target="_blank" rel="noopener">Mon compte L’Établi</a></div>`}</div>`;
   }
 
   function vueAccueil(etat) {
@@ -342,8 +342,8 @@
       <div class="row"><button type="submit">C'est parti</button></div></form><p class="status">${esc(statut)}</p>
       <p class="muted">Votre coparent vous a invité? Connectez-vous avec le même cellulaire que celui qu'il a inscrit. <button class="lien" data-a="deconnexion">Changer de compte</button></p></section>`;
     return `<section class="accueil">${LUCIE}<h1>Le Vestibule</h1><p class="grand">Laissez le travail à la porte. L'école, le calendrier et les gens qui comptent, en une minute chaque soir, avec Lucie.</p>
-      <div class="row"><button data-a="connexion">Continuer avec HoldingAI</button></div><p class="status">${esc(statut)}</p>
-      <p class="muted">Le même compte que vos autres apps HoldingAI.</p></section>`;
+      <div class="row"><button data-a="connexion">Continuer avec L’Établi</button></div><p class="status">${esc(statut)}</p>
+      <p class="muted">Le même compte que vos autres apps de L’Établi.</p></section>`;
   }
 
   function rendre() {
@@ -353,7 +353,7 @@
     if (!vues[onglet]) onglet = "ce-soir";
     const titre = onglet === "ce-soir" ? "Laissez le travail ici." : ONGLETS.find((o) => o[0] === onglet)[1];
     const prenom = S.moi && S.moi.prenom;
-    $app.innerHTML = `<header class="hero">${DEMO ? "" : `<button type="button" class="hai-porte-btn" data-hai-porte aria-label="Mon compte (Albert, HoldingAI)" title="Mon compte"></button>`}<p>${esc(salut + (prenom && prenom !== "Moi" ? ", " + prenom : ""))} · ${esc(fmt(AUJ))}</p><h1>${esc(titre)}</h1><p>${onglet === "ce-soir" ? "Une minute, puis la maison." : "Le Vestibule, avec Lucie"}</p>
+    $app.innerHTML = `<header class="hero">${DEMO ? "" : `<button type="button" class="hai-porte-btn" data-hai-porte aria-label="Mon compte (Albert, L’Établi)" title="Mon compte"></button>`}<p>${esc(salut + (prenom && prenom !== "Moi" ? ", " + prenom : ""))} · ${esc(fmt(AUJ))}</p><h1>${esc(titre)}</h1><p>${onglet === "ce-soir" ? "Une minute, puis la maison." : "Le Vestibule, avec Lucie"}</p>
       <svg viewBox="0 0 150 130" aria-hidden="true"><rect x="62" y="18" width="62" height="112" rx="4" fill="rgba(255,255,255,.12)"/><rect x="70" y="26" width="46" height="104" fill="#fbd9a8" class="lamp"/><path d="M70 26 L52 34 L52 130 L70 130 Z" fill="rgba(255,255,255,.22)"/><circle cx="57" cy="84" r="2.5" fill="#fff"/><path d="M116 130 L150 130 L150 96 Z" fill="rgba(251,217,168,.25)" class="lamp"/><circle cx="135" cy="22" r="6" fill="#f0725c"/></svg></header>
       ${DEMO ? `<div class="bandeau"><span>Mode démo : données d'exemple sur cet appareil.</span></div>` : bandeauForfait()}
       <main>${vues[onglet]()}</main>
@@ -480,7 +480,7 @@
       case "notif": activerNotif(); break;
       case "enf-ajout": { const p = val("enf-p"); if (!p) return; ajouter("enfants", { prenom: p, ordre: S.enfants.length + 1 }); break; }
       case "enf-suppr": supprimer("enfants", id); break;
-      case "mem-ajout": { const p = val("mem-p"), t = val("mem-t"); if (!p || !t) return toast("Entrez le prénom et le cellulaire."); ajouter("membres", { prenom: p, telephone: t, foyer_id: S.foyer.id }); toast("Invité. Il se connecte avec son compte HoldingAI, sur ce cellulaire."); break; }
+      case "mem-ajout": { const p = val("mem-p"), t = val("mem-t"); if (!p || !t) return toast("Entrez le prénom et le cellulaire."); ajouter("membres", { prenom: p, telephone: t, foyer_id: S.foyer.id }); toast("Invité. Il se connecte avec son compte L’Établi, sur ce cellulaire."); break; }
       case "mem-suppr": supprimer("membres", id); break;
       case "r-exp": modifier("foyers", S.foyer.id, { expediteurs: val("r-exp") }); toast("Enregistré."); break;
       case "r-ical": {
