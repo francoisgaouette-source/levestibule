@@ -11,5 +11,5 @@ window.VESTIBULE_CONFIG = {
   prix: "19,99 $ par année"
 };
 
-// Compte HoldingAI (compte.holdingai.app) : client OAuth « Le Vestibule » dans le projet HoldingAI Compte
+// Compte HoldingAI (compte.letabli.ai) : client OAuth « Le Vestibule » dans le projet HoldingAI Compte
 window.APP_CONFIG = { HOLDINGAI: { clientId: "7a34d46b-ee67-4e92-8b24-5e7f5124a77a", app: "le-vestibule", retour: "https://app.levestibule.ai/" } };

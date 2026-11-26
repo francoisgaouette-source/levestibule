@@ -1,7 +1,7 @@
 // Service worker du Vestibule : garde l'app en cache pour qu'elle s'ouvre vite, propose la nouvelle version
 // quand une mise à jour est publiée, et affiche les rappels de Lucie.
 // Changez VERSION à chaque déploiement pour déclencher la mise à jour chez les gens.
-const VERSION = 'lv-2026-11-26-1';
+const VERSION = 'lv-2026-11-26-2';
 const FICHIERS = ['/', '/index.html', '/style.css', '/app.js', '/config.js', '/holdingai.js', '/compte.js', '/manifest.webmanifest',
   '/icons/icon-192.png', '/icons/icon-512.png', '/icons/apple-touch-icon.png'];
 

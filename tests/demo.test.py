@@ -17,7 +17,7 @@ with sync_playwright() as p:
     b = p.chromium.launch()
     pg = b.new_page(viewport={'width': 390, 'height': 844})
     errs = []; pg.on('pageerror', lambda e: errs.append(str(e)))
-    for motif in ['**/cdn.jsdelivr.net/**', '**/compte.holdingai.app/**', '**/fonts.googleapis.com/**']:
+    for motif in ['**/cdn.jsdelivr.net/**', '**/compte.letabli.ai/**', '**/fonts.googleapis.com/**']:
         pg.route(motif, lambda r: r.fulfill(body='', content_type='text/javascript'))
     # Mode démonstration : config.js sans Supabase
     pg.route(U + '/config.js', lambda r: r.fulfill(content_type='text/javascript', body='window.VESTIBULE_CONFIG={nom:"Le Vestibule",supabaseUrl:"",domaineCourriel:"levestibule.ai",siteUrl:"https://levestibule.ai/",prix:"19,99 $ par année"};window.APP_CONFIG={HOLDINGAI:{clientId:"",app:"le-vestibule"}};'))
