@@ -18,7 +18,7 @@ async function exporter(jeton: string) {
   const debut = aujourdhui(f.fuseau, -30), fin = aujourdhui(f.fuseau, 180);
   const { data: el } = await db.from("elements").select("id, genre, titre, jour, heure, enfant, cree").eq("foyer_id", f.id).gte("jour", debut).lte("jour", fin).order("jour");
   const stamp = new Date().toISOString().replace(/[-:]/g, "").replace(/\.\d+/, "");
-  const L = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//L’Établi//Le Vestibule//FR", "CALSCALE:GREGORIAN", "METHOD:PUBLISH",
+  const L = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//HoldingAI//Le Vestibule//FR", "CALSCALE:GREGORIAN", "METHOD:PUBLISH",
     "X-WR-CALNAME:École (Le Vestibule)", "X-WR-TIMEZONE:" + f.fuseau, "REFRESH-INTERVAL;VALUE=DURATION:PT6H", "X-PUBLISHED-TTL:PT6H"];
   for (const e of el || []) {
     const j = e.jour.replace(/-/g, "");
