@@ -332,7 +332,7 @@
     ${blocForfait()}
     <div class="card"><h2>${DEMO ? "Mode démo" : "Compte"}</h2>
       ${DEMO ? `<p class="muted">Les données d'exemple restent sur cet appareil.</p><div class="row"><button class="ghost" data-a="demo-vider">Tout effacer</button><button class="ghost" data-a="demo-exemple">Remettre l'exemple</button></div>`
-        : `<p class="muted">Fuseau horaire : ${esc(f.fuseau)}</p><div class="row"><button class="ghost" data-a="deconnexion">Se déconnecter</button><a class="btn ghost" href="${esc(HoldingAI.compteUrl)}" target="_blank" rel="noopener">Mon compte HoldingAI</a></div>`}</div>`;
+        : `<p class="muted">Fuseau horaire : ${esc(f.fuseau)}</p><div class="row"><button class="ghost" type="button" data-hai-inviter>Inviter quelqu'un</button><button class="ghost" data-a="deconnexion">Se déconnecter</button><a class="btn ghost" href="${esc(HoldingAI.compteUrl)}" target="_blank" rel="noopener">Mon compte HoldingAI</a></div>`}</div>`;
   }
 
   function vueAccueil(etat) {
