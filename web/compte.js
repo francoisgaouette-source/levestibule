@@ -8,7 +8,7 @@ window.VESTIBULE_DEMARRAGE = (async () => {
   const dep = await HoldingAI.demarrer({ obligatoire: true });
   if (dep.redirection) return dep;
   window.HOLDINGAI_PORTE = {
-    app: "le-vestibule", nomApp: "Le Vestibule", personnage: "Lucie",
+    app: "le-vestibule", nomApp: "Le Vestibule", personnage: "Catherine",
     connecte: !!dep.session, prenom: dep.session ? dep.session.nom : "",
     surDeconnexion: () => { HoldingAI.deconnexion(); location.reload(); },
   };

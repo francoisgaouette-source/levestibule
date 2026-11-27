@@ -1,10 +1,10 @@
 # Le Vestibule
 
-Une minute entre le travail et la maison, avec **Lucie**. Chaque soir : déposer le travail, voir ce qu'il faut pour demain à l'école, et penser à quelqu'un qui compte.
+Une minute entre le travail et la maison, avec **Catherine**. Chaque soir : déposer le travail, voir ce qu'il faut pour demain à l'école, et penser à quelqu'un qui compte.
 
 App de HoldingAI, avec le compte HoldingAI (obligatoire, comme toutes les apps HoldingAI). **Essai de 30 jours, puis 19,99 $ par année** pour le foyer (jusqu'à 4 personnes), comme Le Commis. Après l'essai, sans paiement : lecture seule.
 
-- **levestibule.ai** : le site (accueil, comment ça marche, Lucie, questions, prix et achat, confidentialité, conditions). www redirige vers levestibule.ai.
+- **levestibule.ai** : le site (accueil, comment ça marche, Catherine, questions, prix et achat, confidentialité, conditions). www redirige vers levestibule.ai.
 - **app.levestibule.ai** : l'app installable.
 - **famille-<code>@levestibule.ai** : l'adresse de chaque famille, où un filtre Gmail ou Outlook transfère les courriels de l'école.
 
@@ -15,7 +15,7 @@ Un petit Worker (`worker/`, `wrangler.jsonc`) reçoit les courriels, parce que P
 
 | Onglet | Rôle |
 |---|---|
-| Ce soir | 1. Déposer le travail (écrit ou dicté, privé). 2. Demain à la maison : école, formulaires et paiements qui approchent, achats, congés à prévoir, conflits avec l'agenda. 3. Un moment proposé par Lucie. |
+| Ce soir | 1. Déposer le travail (écrit ou dicté, privé). 2. Demain à la maison : école, formulaires et paiements qui approchent, achats, congés à prévoir, conflits avec l'agenda. 3. Un moment proposé par Catherine. |
 | École | Ce qui vient des courriels transférés, d'une photo (feuille du sac à dos, capture de Mozaïk ou Clic école) ou d'un message collé. Chaque élément montre d'où il vient et qui s'en occupe. |
 | À acheter, Gens | Achats avec date limite; les gens à qui penser. |
 | Réglages | Prénom, heure de fin de journée, rappels, enfants, coparent (invité par cellulaire), transfert Gmail pas à pas (avec le lien de confirmation de Gmail), agenda personnel (adresse iCal), abonnement au calendrier de l'école, forfait. |
@@ -44,7 +44,7 @@ Sans `supabaseUrl` dans `web/config.js`, l'app roule en mode démonstration (don
 - Connexion par compte HoldingAI : Third-Party Auth > Custom OIDC (émetteur `https://wwakxuzuhmdmweluafiz.supabase.co/auth/v1`) activé sur le projet Le Vestibule.
 - En ligne : https://levestibule.ai (site) et https://app.levestibule.ai (app), Cloudflare Pages **le-vestibule** relié à ce dépôt (sortie `web`, sans build).
 - Worker **levestibule-courriel** relié à ce dépôt (Workers Builds) ; `SUPABASE_URL` dans `wrangler.jsonc`. Email Routing de levestibule.ai actif : DNS en place, règle catch-all → ce Worker.
-- App inscrite dans HoldingAI Compte (`le-vestibule`, personnage Lucie, client OAuth public `7a34d46b-ee67-4e92-8b24-5e7f5124a77a`, retour https://app.levestibule.ai/).
+- App inscrite dans HoldingAI Compte (`le-vestibule`, personnage Catherine, client OAuth public `7a34d46b-ee67-4e92-8b24-5e7f5124a77a`, retour https://app.levestibule.ai/).
 
 À faire :
 

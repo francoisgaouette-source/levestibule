@@ -10,11 +10,11 @@ MAJ = '25 novembre 2026'
 PRIX = '19,99 $'
 STRIPE = ''  # lien de paiement Stripe (buy.stripe.com/…) : vide = « Les ventes ouvrent bientôt »
 
-LUCIE = '''<svg class="lucie" viewBox="0 0 64 64" aria-hidden="true"><path d="M9 36C9 19 19 8 32 8s23 11 23 28v16H9z" fill="#7a3b2e"/><circle cx="32" cy="35" r="17" fill="#f2c49b"/><path d="M15 31c2-11 9-16 17-16s15 5 17 14c-7-1-13-5-16-10-4 7-11 11-18 12z" fill="#7a3b2e"/><circle cx="26" cy="36" r="2.1" fill="#191714"/><circle cx="38" cy="36" r="2.1" fill="#191714"/><path d="M27 44q5 4 10 0" fill="none" stroke="#191714" stroke-width="2.2" stroke-linecap="round"/><circle cx="21" cy="42" r="2.6" fill="#e8462a" opacity=".3"/><circle cx="43" cy="42" r="2.6" fill="#e8462a" opacity=".3"/><path d="M17 58q15-9 30 0v6H17z" fill="#f0725c"/></svg>'''
+LUCIE = '''<svg class="catherine" viewBox="0 0 64 64" aria-hidden="true"><path d="M9 36C9 19 19 8 32 8s23 11 23 28v16H9z" fill="#7a3b2e"/><circle cx="32" cy="35" r="17" fill="#f2c49b"/><path d="M15 31c2-11 9-16 17-16s15 5 17 14c-7-1-13-5-16-10-4 7-11 11-18 12z" fill="#7a3b2e"/><circle cx="26" cy="36" r="2.1" fill="#191714"/><circle cx="38" cy="36" r="2.1" fill="#191714"/><path d="M27 44q5 4 10 0" fill="none" stroke="#191714" stroke-width="2.2" stroke-linecap="round"/><circle cx="21" cy="42" r="2.6" fill="#e8462a" opacity=".3"/><circle cx="43" cy="42" r="2.6" fill="#e8462a" opacity=".3"/><path d="M17 58q15-9 30 0v6H17z" fill="#f0725c"/></svg>'''
 
 PORTE = '''<svg class="porte" viewBox="0 0 150 130" aria-hidden="true"><rect x="62" y="18" width="62" height="112" rx="4" fill="rgba(255,255,255,.12)"/><rect x="70" y="26" width="46" height="104" fill="#fbd9a8"/><path d="M70 26 L52 34 L52 130 L70 130 Z" fill="rgba(255,255,255,.22)"/><circle cx="57" cy="84" r="2.5" fill="#fff"/><circle cx="135" cy="22" r="6" fill="#f0725c"/></svg>'''
 
-PAGES = [('/', 'Accueil'), ('/comment-ca-marche', 'Comment ça marche'), ('/lucie', 'Lucie'), ('/questions', 'Questions'), ('/achat', 'Prix')]
+PAGES = [('/', 'Accueil'), ('/comment-ca-marche', 'Comment ça marche'), ('/catherine', 'Catherine'), ('/questions', 'Questions'), ('/achat', 'Prix')]
 
 def page(chemin, titre, description, corps, script=''):
     nav = ''.join(f'<a href="{c}"{" aria-current=\"page\"" if c == chemin else ""}>{t}</a>' for c, t in PAGES[1:])
@@ -44,7 +44,7 @@ def page(chemin, titre, description, corps, script=''):
 {corps}
 </main>
 <footer><div class="wrap">
-  <span>© {datetime.date.today().year} Le Vestibule, une app de HoldingAI (Les Stratégies Vortex Inc.) · Fait au Québec</span>
+  <span>© {datetime.date.today().year} Le Vestibule, une app de L’Établi (Les Stratégies Vortex Inc.) · Fait au Québec</span>
   <nav aria-label="Pied de page"><a href="/questions">Questions</a><a href="/confidentialite">Confidentialité</a><a href="/conditions">Conditions</a><a href="mailto:{COURRIEL}">{COURRIEL}</a></nav>
 </div></footer>
 {script}
@@ -55,7 +55,7 @@ def page(chemin, titre, description, corps, script=''):
 ACCUEIL = f'''<section class="hero"><div class="wrap">
   <div>
     <h1>Laissez le travail à la porte.</h1>
-    <p class="lead">Chaque soir, Lucie vous accueille au vestibule : une minute pour déposer le travail, voir ce qu'il faut pour demain à l'école, et penser à quelqu'un qui compte.</p>
+    <p class="lead">Chaque soir, Catherine vous accueille au vestibule : une minute pour déposer le travail, voir ce qu'il faut pour demain à l'école, et penser à quelqu'un qui compte.</p>
     <div class="actions"><a class="btn plein" href="{APP}">Essayer 30 jours gratuitement</a><a class="btn clair" href="/comment-ca-marche">Comment ça marche</a></div>
   </div>
   <div class="carte" aria-label="Exemple de soirée">
@@ -65,7 +65,7 @@ ACCUEIL = f'''<section class="hero"><div class="wrap">
     <p class="etape"><b>2</b> Demain à la maison</p>
     <ul><li>Jour de bibliothèque : rapporter le livre (Léa)</li><li>Vêtements d'éducation physique (Hugo)</li><li class="alerte">Sortie hâtive jeudi à 14 h 30 : vous avez un appel à 14 h</li></ul>
     <p class="etape"><b>3</b> Un moment ce soir</p>
-    <div class="dit">{LUCIE}<div class="bulle"><small>Lucie vous suggère</small>Aujourd'hui, c'était la sortie au musée. Demandez à Léa ce qu'elle a préféré.</div></div>
+    <div class="dit">{LUCIE}<div class="bulle"><small>Catherine vous suggère</small>Aujourd'hui, c'était la sortie au musée. Demandez à Léa ce qu'elle a préféré.</div></div>
     <p class="exemple">Exemple</p>
   </div>
 </div></section>
@@ -73,9 +73,9 @@ ACCUEIL = f'''<section class="hero"><div class="wrap">
 <section class="bande"><div class="wrap">
   <h2>Les courriels de l'école, enfin à leur place</h2>
   <div class="grille">
-    <div class="bloc"><div class="num">L'école</div><h3>Rien à recopier</h3><p>Les courriels de l'école sont transférés à l'adresse de votre famille. Lucie en retire les dates, les choses à apporter, les formulaires et les paiements.</p></div>
+    <div class="bloc"><div class="num">L'école</div><h3>Rien à recopier</h3><p>Les courriels de l'école sont transférés à l'adresse de votre famille. Catherine en retire les dates, les choses à apporter, les formulaires et les paiements.</p></div>
     <div class="bloc"><div class="num">Les photos</div><h3>La feuille du sac à dos</h3><p>Une photo de l'avis papier, ou une capture de Mozaïk ou de Clic école, et c'est noté.</p></div>
-    <div class="bloc"><div class="num">L'agenda</div><h3>Les conflits, d'avance</h3><p>Une sortie hâtive pendant une réunion? Lucie vous le dit la veille. Les congés et journées pédagogiques arrivent aussi d'avance.</p></div>
+    <div class="bloc"><div class="num">L'agenda</div><h3>Les conflits, d'avance</h3><p>Une sortie hâtive pendant une réunion? Catherine vous le dit la veille. Les congés et journées pédagogiques arrivent aussi d'avance.</p></div>
     <div class="bloc"><div class="num">À deux</div><h3>Le coparent voit tout</h3><p>Chacun peut prendre un élément : « je m'occupe du formulaire ». La charge mentale se partage enfin.</p></div>
   </div>
 </div></section>
@@ -83,14 +83,14 @@ ACCUEIL = f'''<section class="hero"><div class="wrap">
 <section class="bande teinte"><div class="wrap">
   <div class="grille trois">
     <div><h2>Une minute, pas plus</h2><p>Un rappel à l'heure où vous quittez le travail, et un autre le matin seulement si quelque chose doit partir avec un enfant.</p></div>
-    <div><h2>Les gens qui comptent</h2><p>Notez ce que vous voulez dire à votre père ou demander à une amie : Lucie vous le rappelle au bon moment. Sans culpabilité si ce n'est pas ce soir.</p></div>
+    <div><h2>Les gens qui comptent</h2><p>Notez ce que vous voulez dire à votre père ou demander à une amie : Catherine vous le rappelle au bon moment. Sans culpabilité si ce n'est pas ce soir.</p></div>
     <div><h2>Vos données restent à vous</h2><p>Le texte des courriels n'est pas conservé : seulement les dates et les choses à faire. Ce que vous déposez du travail reste privé, même pour le coparent.</p></div>
   </div>
 </div></section>
 
 <section class="bande"><div class="wrap narrow" style="text-align:center">
   <h2>30 jours gratuits, puis {PRIX} par année pour la famille</h2>
-  <p>Jusqu'à 4 personnes dans le foyer. Un seul paiement, sans renouvellement automatique. Avec le compte HoldingAI, le même que pour vos autres apps.</p>
+  <p>Jusqu'à 4 personnes dans le foyer. Un seul paiement, sans renouvellement automatique. Avec le compte L’Établi, le même que pour vos autres apps.</p>
   <p><a class="btn plein" href="{APP}">Commencer l'essai</a></p>
 </div></section>'''
 
@@ -98,15 +98,15 @@ COMMENT = f'''<section class="bande"><div class="wrap narrow prose">
   <h1>Comment ça marche</h1>
   <p>Le Vestibule tient en un moment par jour : la fin de votre journée de travail. Voici comment le mettre en place, puis comment se passe un soir.</p>
   <div class="grille" style="margin:28px 0">
-    <div class="bloc"><div class="num">1</div><h3>Créez votre foyer</h3><p>Connectez-vous avec votre compte HoldingAI, entrez le prénom des enfants et l'heure où finit votre journée.</p></div>
+    <div class="bloc"><div class="num">1</div><h3>Créez votre foyer</h3><p>Connectez-vous avec votre compte L’Établi, entrez le prénom des enfants et l'heure où finit votre journée.</p></div>
     <div class="bloc"><div class="num">2</div><h3>Branchez l'école</h3><p>Dans Gmail ou Outlook, un filtre transfère les courriels de l'école à l'adresse de votre famille. L'app vous guide pas à pas.</p></div>
     <div class="bloc"><div class="num">3</div><h3>Invitez le coparent</h3><p>Avec son cellulaire. Vous voyez les mêmes éléments, et chacun peut en prendre un.</p></div>
-    <div class="bloc"><div class="num">4</div><h3>Chaque soir, une minute</h3><p>Lucie vous fait signe : déposer le travail, demain à la maison, un moment pour quelqu'un.</p></div>
+    <div class="bloc"><div class="num">4</div><h3>Chaque soir, une minute</h3><p>Catherine vous fait signe : déposer le travail, demain à la maison, un moment pour quelqu'un.</p></div>
   </div>
   <h2>Les messages qui n'arrivent pas par courriel</h2>
-  <p>Bien des écoles du Québec passent par Mozaïk Portail ou Clic école. Faites une capture d'écran du message, ou prenez en photo la feuille du sac à dos, et ajoutez-la dans l'onglet École : Lucie la lit de la même façon.</p>
+  <p>Bien des écoles du Québec passent par Mozaïk Portail ou Clic école. Faites une capture d'écran du message, ou prenez en photo la feuille du sac à dos, et ajoutez-la dans l'onglet École : Catherine la lit de la même façon.</p>
   <h2>Votre agenda</h2>
-  <p>Collez l'adresse secrète iCal de votre agenda (Google, Outlook ou Apple) pour que Lucie repère les conflits avec l'école. Et abonnez-vous au calendrier de l'école de votre famille pour le voir dans votre propre agenda.</p>
+  <p>Collez l'adresse secrète iCal de votre agenda (Google, Outlook ou Apple) pour que Catherine repère les conflits avec l'école. Et abonnez-vous au calendrier de l'école de votre famille pour le voir dans votre propre agenda.</p>
   <h2>Installer l'app</h2>
   <p><strong>iPhone</strong> : ouvrez <a href="{APP}">app.levestibule.ai</a> dans Safari, touchez le bouton Partager, puis « Sur l'écran d'accueil ». Ouvrez l'app depuis son icône pour recevoir les rappels.</p>
   <p><strong>Android</strong> : ouvrez l'adresse dans Chrome, puis le menu ⋮ et « Installer l'application ».</p>
@@ -116,24 +116,24 @@ COMMENT = f'''<section class="bande"><div class="wrap narrow prose">
 </div></section>'''
 
 LUCIE_PAGE = f'''<section class="bande"><div class="wrap">
-  <div class="lucie-grand">{LUCIE}<div class="prose">
-    <h1>Voici Lucie</h1>
-    <p>Lucie est le personnage du Vestibule. Elle vous attend chaque soir à la porte, pendant que vous enlevez vos bottes : douce, attentive, et très bien organisée.</p>
+  <div class="catherine-grand">{LUCIE}<div class="prose">
+    <h1>Voici Catherine</h1>
+    <p>Catherine est le personnage du Vestibule. Elle vous attend chaque soir à la porte, pendant que vous enlevez vos bottes : douce, attentive, et très bien organisée.</p>
     <p>Elle a lu les courriels de l'école pour vous, sait ce qui doit partir dans les sacs demain et se souvient que vous vouliez appeler votre père. Elle ne fait jamais la morale : si ce n'est pas ce soir, ce sera un autre soir.</p>
-    <p>Lucie fait partie de la famille des personnages HoldingAI, avec Rosalie du Commis, Simon du Pourquoi, Gaston du Tiroir, Colette du Plumeau et les autres.</p>
-    <p><a class="btn plein" href="{APP}">Rencontrer Lucie</a></p>
+    <p>Catherine fait partie de la famille des personnages de L’Établi, avec Simon du Pourquoi, LP du Tiroir, Colette du Plumeau et les autres.</p>
+    <p><a class="btn plein" href="{APP}">Rencontrer Catherine</a></p>
   </div></div>
 </div></section>'''
 
 QR = [
  ("Combien ça coûte?", f"L'essai est gratuit pendant 30 jours, avec tout ouvert. Ensuite, {PRIX} par année pour tout le foyer (jusqu'à 4 personnes), plus les taxes. Un seul paiement, fait par le propriétaire du foyer, sans renouvellement automatique. Après l'essai, sans paiement, vos données restent consultables, mais plus modifiables."),
- ("Faut-il un compte?", "Oui : le compte HoldingAI, le même pour toutes les apps HoldingAI (Le Commis, Le Pourquoi…). Votre coparent utilise le sien."),
+ ("Faut-il un compte?", "Oui : le compte L’Établi, le même pour toutes les apps de L’Établi (Le Commis, Le Pourquoi…). Votre coparent utilise le sien."),
  ("L'app lit-elle toute ma boîte courriel?", "Non. Elle n'a aucun accès à votre boîte. Elle reçoit seulement les messages que votre filtre transfère à l'adresse de la famille : ceux de l'école."),
  ("Que gardez-vous des courriels?", "Seulement ce qui en a été retiré : la date, le titre, l'enfant concerné et d'où ça vient (par exemple « Courriel : Sortie au musée »). Le texte et les pièces jointes ne sont pas conservés."),
  ("Et Mozaïk ou Clic école?", "Si l'école vous écrit aussi par courriel, le filtre suffit. Sinon, faites une capture d'écran du message et ajoutez-la dans l'onglet École."),
  ("Mon coparent voit-il tout?", "Il voit l'école, les achats et les gens à qui penser. Ce que vous déposez du travail et l'adresse de votre agenda restent à vous seul."),
  ("Les rappels arrivent quand?", "Du lundi au vendredi, à l'heure où finit votre journée de travail (le dimanche aussi s'il y a quelque chose pour lundi). Le matin vers 7 h, seulement si quelque chose doit partir avec un enfant. Sur iPhone, ouvrez l'app depuis l'écran d'accueil pour les recevoir."),
- ("Et si Lucie se trompe?", "Une lecture automatique peut mal comprendre une date. Chaque élément montre d'où il vient; vous pouvez le corriger, le cocher ou le supprimer en un geste."),
+ ("Et si Catherine se trompe?", "Une lecture automatique peut mal comprendre une date. Chaque élément montre d'où il vient; vous pouvez le corriger, le cocher ou le supprimer en un geste."),
  ("Comment vous joindre?", f"Écrivez-nous à {COURRIEL}."),
 ]
 QUESTIONS = '<section class="bande"><div class="wrap narrow"><h1>Questions</h1>' + ''.join(f'<details><summary>{q}</summary><p>{r}</p></details>' for q, r in QR) + f'<p style="margin-top:24px"><a class="btn plein" href="{APP}">Ouvrir l\'app</a></p></div></section>'
@@ -144,7 +144,7 @@ ACHAT = f'''<section class="bande"><div class="wrap">
   <div class="achat">
     <div class="bloc">
       <h3>Ce qui est inclus</h3>
-      <ul><li>Jusqu'à 4 personnes dans le foyer</li><li>Lecture des courriels, photos et captures de l'école</li><li>Rappels du soir et du matin</li><li>Conflits avec votre agenda, calendrier de l'école dans le vôtre</li><li>Lucie, en français</li></ul>
+      <ul><li>Jusqu'à 4 personnes dans le foyer</li><li>Lecture des courriels, photos et captures de l'école</li><li>Rappels du soir et du matin</li><li>Conflits avec votre agenda, calendrier de l'école dans le vôtre</li><li>Catherine, en français</li></ul>
       <h3>Comment ça marche</h3>
       <ol><li><b>Ouvrez cette page depuis l'app</b> : le bouton « Acheter » indique votre foyer.</li><li><b>Payez par carte</b> sur la page sécurisée de Stripe. Vous recevez un reçu par courriel.</li><li><b>Revenez dans l'app</b> : votre foyer est activé pour 12 mois, tout seul.</li></ol>
     </div>
@@ -181,7 +181,7 @@ CONFID = f'''<section class="bande"><div class="wrap narrow prose">
   <p>Le Vestibule touche à la vie de famille. Nous gardons le moins possible, et seulement ce qui sert à l'app.</p>
   <h2>Ce que nous gardons</h2>
   <ul>
-    <li><strong>Votre compte HoldingAI</strong> : prénom et cellulaire, pour vous reconnaître et vous relier à votre foyer.</li>
+    <li><strong>Votre compte L’Établi</strong> : prénom et cellulaire, pour vous reconnaître et vous relier à votre foyer.</li>
     <li><strong>Le foyer</strong> : le prénom des enfants (aucune date de naissance, aucune école nommée), les membres invités par leur cellulaire, l'heure de fin de journée et vos choix de rappels.</li>
     <li><strong>Ce qui vient de l'école</strong> : pour chaque élément, la date, un titre court, le prénom de l'enfant s'il est indiqué, et sa provenance (« Courriel : Sortie au musée », « Photo »).</li>
     <li><strong>Vos notes</strong> : la liste d'achats, les gens à qui penser, et ce que vous déposez du travail (visible par vous seul).</li>
@@ -200,7 +200,7 @@ COND = f'''<section class="bande"><div class="wrap narrow prose">
   <h1>Conditions d'utilisation</h1>
   <p class="maj">Dernière mise à jour : {MAJ}</p>
   <h2>Le service</h2>
-  <p>Le Vestibule, une app de HoldingAI (Les Stratégies Vortex Inc.), aide les familles à organiser la fin de la journée : messages de l'école, achats, rappels et notes personnelles. Il faut un compte HoldingAI.</p>
+  <p>Le Vestibule, une app de L’Établi (Les Stratégies Vortex Inc.), aide les familles à organiser la fin de la journée : messages de l'école, achats, rappels et notes personnelles. Il faut un compte L’Établi.</p>
   <h2>Essai et forfait</h2>
   <p>L'essai gratuit dure 30 jours. Le forfait coûte {PRIX} par année pour un foyer (jusqu'à 4 personnes), plus les taxes applicables. C'est un paiement unique pour 12 mois, sans renouvellement automatique. Après l'essai ou à la fin du forfait, les données restent consultables mais ne peuvent plus être modifiées.</p>
   <h2>Une aide, pas une garantie</h2>
@@ -208,7 +208,7 @@ COND = f'''<section class="bande"><div class="wrap narrow prose">
   <h2>Utilisation</h2>
   <p>Transférez seulement les messages de l'école de vos enfants. N'utilisez pas l'adresse de la famille pour d'autres courriels, et ne tentez pas de contourner la sécurité du service.</p>
   <h2>Responsabilité</h2>
-  <p>Dans la mesure permise par la loi, HoldingAI n'est pas responsable des dommages découlant d'un élément manqué ou mal lu. Ces conditions sont régies par les lois du Québec.</p>
+  <p>Dans la mesure permise par la loi, L’Établi n'est pas responsable des dommages découlant d'un élément manqué ou mal lu. Ces conditions sont régies par les lois du Québec.</p>
   <h2>Nous joindre</h2>
   <p><a href="mailto:{COURRIEL}">{COURRIEL}</a></p>
 </div></section>'''
@@ -216,14 +216,14 @@ COND = f'''<section class="bande"><div class="wrap narrow prose">
 INTROUVABLE = f'''<section class="bande"><div class="wrap narrow" style="text-align:center">
   <div style="width:110px;margin:0 auto 12px">{LUCIE}</div>
   <h1>Cette porte ne mène nulle part</h1>
-  <p>La page a peut-être changé d'adresse. Lucie vous attend quand même à l'entrée.</p>
+  <p>La page a peut-être changé d'adresse. Catherine vous attend quand même à l'entrée.</p>
   <p><a class="btn plein" href="{APP}">Ouvrir l'app</a> <a class="btn clair" href="/">Retour à l'accueil</a></p>
 </div></section>'''
 
 FICHIERS = {
-  'index.html': page('/', "Le Vestibule : une minute entre le travail et la maison", "Chaque soir, Lucie vous aide à déposer le travail, voir ce qu'il faut pour l'école demain et penser à quelqu'un qui compte. 30 jours gratuits.", ACCUEIL),
+  'index.html': page('/', "Le Vestibule : une minute entre le travail et la maison", "Chaque soir, Catherine vous aide à déposer le travail, voir ce qu'il faut pour l'école demain et penser à quelqu'un qui compte. 30 jours gratuits.", ACCUEIL),
   'comment-ca-marche.html': page('/comment-ca-marche', "Comment ça marche · Le Vestibule", "Les courriels de l'école transférés, les photos du sac à dos, votre agenda et le coparent : la mise en place en quatre étapes.", COMMENT),
-  'lucie.html': page('/lucie', "Lucie · Le Vestibule", "Lucie, celle qui vous attend chaque soir à la porte.", LUCIE_PAGE),
+  'catherine.html': page('/catherine', "Catherine · Le Vestibule", "Catherine, celle qui vous attend chaque soir à la porte.", LUCIE_PAGE),
   'questions.html': page('/questions', "Questions · Le Vestibule", "Prix, compte, courriels de l'école, Mozaïk, coparent, rappels : les réponses aux questions fréquentes.", QUESTIONS),
   'achat.html': page('/achat', "Acheter · Le Vestibule", f"{PRIX} par année pour toute la famille, après 30 jours gratuits.", ACHAT, ACHAT_JS),
   'confidentialite.html': page('/confidentialite', "Confidentialité · Le Vestibule", "Le texte des courriels n'est pas conservé : ce que Le Vestibule garde, et ce qu'il ne garde pas.", CONFID),
@@ -237,6 +237,6 @@ for nom, html in FICHIERS.items():
 with open(os.path.join(SORTIE, 'robots.txt'), 'w') as f:
     f.write('User-agent: *\nAllow: /\nSitemap: https://levestibule.ai/sitemap.xml\n')
 with open(os.path.join(SORTIE, 'sitemap.xml'), 'w') as f:
-    urls = ''.join(f'<url><loc>https://levestibule.ai{c if c != "/" else "/"}</loc></url>' for c in ['/', '/comment-ca-marche', '/lucie', '/questions', '/achat', '/confidentialite', '/conditions'])
+    urls = ''.join(f'<url><loc>https://levestibule.ai{c if c != "/" else "/"}</loc></url>' for c in ['/', '/comment-ca-marche', '/catherine', '/questions', '/achat', '/confidentialite', '/conditions'])
     f.write(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>\n')
 print('Site généré :', ', '.join(FICHIERS))
