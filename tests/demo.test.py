@@ -23,6 +23,7 @@ with sync_playwright() as p:
     pg.route(U + '/config.js', lambda r: r.fulfill(content_type='text/javascript', body='window.VESTIBULE_CONFIG={nom:"Le Vestibule",supabaseUrl:"",domaineCourriel:"levestibule.ai",siteUrl:"https://levestibule.ai/",prix:"19,99 $ par année"};window.APP_CONFIG={HOLDINGAI:{clientId:"",app:"le-vestibule"}};'))
     # En ligne, le site sert /site.css et /favicon.png à la racine (functions/_middleware.js)
     pg.route(U + '/site.css', lambda r: r.fulfill(path=os.path.join(ROOT, 'site', 'site.css'), content_type='text/css'))
+    pg.route(U + '/charlotte*.webp', lambda r: r.fulfill(path=os.path.join(ROOT, 'site', r.request.url.rsplit('/',1)[1]), content_type='image/webp'))
     pg.goto(U + '/#ce-soir'); pg.wait_for_selector('.hero h1')
     check('Laissez le travail ici.' in pg.inner_text('.hero h1'), 'écran Ce soir')
     check('Charlotte vous suggère' in pg.inner_text('.moment'), 'Charlotte propose un moment')

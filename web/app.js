@@ -17,7 +17,7 @@
   const dans = (s) => Math.round((new Date(s + "T12:00:00") - new Date(AUJ + "T12:00:00")) / 864e5);
   const hm = (t) => (t || "").slice(0, 5);
   const uid = () => (crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2));
-  const LUCIE = `<svg class="charlotte" viewBox="0 0 64 64" aria-hidden="true"><path d="M9 36C9 19 19 8 32 8s23 11 23 28v16H9z" fill="#7a3b2e"/><circle cx="32" cy="35" r="17" fill="#f2c49b"/><path d="M15 31c2-11 9-16 17-16s15 5 17 14c-7-1-13-5-16-10-4 7-11 11-18 12z" fill="#7a3b2e"/><circle cx="26" cy="36" r="2.1" fill="#191714"/><circle cx="38" cy="36" r="2.1" fill="#191714"/><path d="M27 44q5 4 10 0" fill="none" stroke="#191714" stroke-width="2.2" stroke-linecap="round"/><circle cx="21" cy="42" r="2.6" fill="#e8462a" opacity=".3"/><circle cx="43" cy="42" r="2.6" fill="#e8462a" opacity=".3"/><path d="M17 58q15-9 30 0v6H17z" fill="#f0725c"/></svg>`;
+  const LUCIE = `<img class="charlotte" src="charlotte-tete.webp" alt="" width="320" height="320">`;
   let prenomCompte = "";
   const GENRE = { activite: "Activité", apporter: "À apporter", formulaire: "Formulaire", payer: "À payer", conge: "Congé" };
   const fuseauAppareil = () => { try { return Intl.DateTimeFormat().resolvedOptions().timeZone || "America/Toronto"; } catch (e) { return "America/Toronto"; } };

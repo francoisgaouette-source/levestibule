@@ -10,7 +10,7 @@ MAJ = '25 novembre 2026'
 PRIX = '19,99 $'
 STRIPE = ''  # lien de paiement Stripe (buy.stripe.com/…) : vide = « Les ventes ouvrent bientôt »
 
-LUCIE = '''<svg class="charlotte" viewBox="0 0 64 64" aria-hidden="true"><path d="M9 36C9 19 19 8 32 8s23 11 23 28v16H9z" fill="#7a3b2e"/><circle cx="32" cy="35" r="17" fill="#f2c49b"/><path d="M15 31c2-11 9-16 17-16s15 5 17 14c-7-1-13-5-16-10-4 7-11 11-18 12z" fill="#7a3b2e"/><circle cx="26" cy="36" r="2.1" fill="#191714"/><circle cx="38" cy="36" r="2.1" fill="#191714"/><path d="M27 44q5 4 10 0" fill="none" stroke="#191714" stroke-width="2.2" stroke-linecap="round"/><circle cx="21" cy="42" r="2.6" fill="#e8462a" opacity=".3"/><circle cx="43" cy="42" r="2.6" fill="#e8462a" opacity=".3"/><path d="M17 58q15-9 30 0v6H17z" fill="#f0725c"/></svg>'''
+LUCIE = '''<img class="charlotte" src="/charlotte-tete.webp" alt="" width="320" height="320">'''
 
 PORTE = '''<svg class="porte" viewBox="0 0 150 130" aria-hidden="true"><rect x="62" y="18" width="62" height="112" rx="4" fill="rgba(255,255,255,.12)"/><rect x="70" y="26" width="46" height="104" fill="#fbd9a8"/><path d="M70 26 L52 34 L52 130 L70 130 Z" fill="rgba(255,255,255,.22)"/><circle cx="57" cy="84" r="2.5" fill="#fff"/><circle cx="135" cy="22" r="6" fill="#f0725c"/></svg>'''
 
@@ -116,7 +116,7 @@ COMMENT = f'''<section class="bande"><div class="wrap narrow prose">
 </div></section>'''
 
 LUCIE_PAGE = f'''<section class="bande"><div class="wrap">
-  <div class="charlotte-grand">{LUCIE}<div class="prose">
+  <div class="charlotte-grand"><img class="portrait" src="/charlotte.webp" alt="Charlotte, dessinée dans une cuisine, sourit et salue de la main." width="600" height="800"><div class="prose">
     <h1>Voici Charlotte</h1>
     <p>Charlotte est le personnage du Vestibule. Elle vous attend chaque soir à la porte, pendant que vous enlevez vos bottes : douce, attentive, et très bien organisée.</p>
     <p>Elle a lu les courriels de l'école pour vous, sait ce qui doit partir dans les sacs demain et se souvient que vous vouliez appeler votre père. Elle ne fait jamais la morale : si ce n'est pas ce soir, ce sera un autre soir.</p>

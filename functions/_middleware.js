@@ -6,7 +6,7 @@ const PAGES = {
   "/": "/site/", "/comment-ca-marche": "/site/comment-ca-marche", "/charlotte": "/site/charlotte", "/lucie": "/site/charlotte", "/catherine": "/site/charlotte", "/questions": "/site/questions",
   "/achat": "/site/achat", "/confidentialite": "/site/confidentialite", "/conditions": "/site/conditions",
 };
-const FICHIERS = ["/site.css", "/favicon.png", "/robots.txt", "/sitemap.xml"];
+const FICHIERS = ["/site.css", "/favicon.png", "/robots.txt", "/sitemap.xml", "/charlotte.webp", "/charlotte-tete.webp"];
 const SECURITE = { "X-Content-Type-Options": "nosniff", "Referrer-Policy": "strict-origin-when-cross-origin", "X-Frame-Options": "DENY" };
 
 export async function onRequest({ request, env, next }) {

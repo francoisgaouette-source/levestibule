@@ -1,8 +1,8 @@
 // Service worker du Vestibule : garde l'app en cache pour qu'elle s'ouvre vite, propose la nouvelle version
 // quand une mise à jour est publiée, et affiche les rappels de Charlotte.
 // Changez VERSION à chaque déploiement pour déclencher la mise à jour chez les gens.
-const VERSION = 'lv-2026-11-26-charlotte';
-const FICHIERS = ['/', '/index.html', '/style.css', '/app.js', '/config.js', '/holdingai.js', '/compte.js', '/manifest.webmanifest',
+const VERSION = 'lv-2026-11-26-charlotte-image';
+const FICHIERS = ['/', '/index.html', '/style.css', '/app.js', '/config.js', '/holdingai.js', '/compte.js', '/manifest.webmanifest', '/charlotte-tete.webp',
   '/icons/icon-192.png', '/icons/icon-512.png', '/icons/apple-touch-icon.png'];
 
 self.addEventListener('install', e => {
