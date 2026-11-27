@@ -10,11 +10,11 @@ MAJ = '25 novembre 2026'
 PRIX = '19,99 $'
 STRIPE = ''  # lien de paiement Stripe (buy.stripe.com/…) : vide = « Les ventes ouvrent bientôt »
 
-LUCIE = '''<svg class="catherine" viewBox="0 0 64 64" aria-hidden="true"><path d="M9 36C9 19 19 8 32 8s23 11 23 28v16H9z" fill="#7a3b2e"/><circle cx="32" cy="35" r="17" fill="#f2c49b"/><path d="M15 31c2-11 9-16 17-16s15 5 17 14c-7-1-13-5-16-10-4 7-11 11-18 12z" fill="#7a3b2e"/><circle cx="26" cy="36" r="2.1" fill="#191714"/><circle cx="38" cy="36" r="2.1" fill="#191714"/><path d="M27 44q5 4 10 0" fill="none" stroke="#191714" stroke-width="2.2" stroke-linecap="round"/><circle cx="21" cy="42" r="2.6" fill="#e8462a" opacity=".3"/><circle cx="43" cy="42" r="2.6" fill="#e8462a" opacity=".3"/><path d="M17 58q15-9 30 0v6H17z" fill="#f0725c"/></svg>'''
+LUCIE = '''<svg class="charlotte" viewBox="0 0 64 64" aria-hidden="true"><path d="M9 36C9 19 19 8 32 8s23 11 23 28v16H9z" fill="#7a3b2e"/><circle cx="32" cy="35" r="17" fill="#f2c49b"/><path d="M15 31c2-11 9-16 17-16s15 5 17 14c-7-1-13-5-16-10-4 7-11 11-18 12z" fill="#7a3b2e"/><circle cx="26" cy="36" r="2.1" fill="#191714"/><circle cx="38" cy="36" r="2.1" fill="#191714"/><path d="M27 44q5 4 10 0" fill="none" stroke="#191714" stroke-width="2.2" stroke-linecap="round"/><circle cx="21" cy="42" r="2.6" fill="#e8462a" opacity=".3"/><circle cx="43" cy="42" r="2.6" fill="#e8462a" opacity=".3"/><path d="M17 58q15-9 30 0v6H17z" fill="#f0725c"/></svg>'''
 
 PORTE = '''<svg class="porte" viewBox="0 0 150 130" aria-hidden="true"><rect x="62" y="18" width="62" height="112" rx="4" fill="rgba(255,255,255,.12)"/><rect x="70" y="26" width="46" height="104" fill="#fbd9a8"/><path d="M70 26 L52 34 L52 130 L70 130 Z" fill="rgba(255,255,255,.22)"/><circle cx="57" cy="84" r="2.5" fill="#fff"/><circle cx="135" cy="22" r="6" fill="#f0725c"/></svg>'''
 
-PAGES = [('/', 'Accueil'), ('/comment-ca-marche', 'Comment ça marche'), ('/catherine', 'Catherine'), ('/questions', 'Questions'), ('/achat', 'Prix')]
+PAGES = [('/', 'Accueil'), ('/comment-ca-marche', 'Comment ça marche'), ('/charlotte', 'Charlotte'), ('/questions', 'Questions'), ('/achat', 'Prix')]
 
 def page(chemin, titre, description, corps, script=''):
     nav = ''.join(f'<a href="{c}"{" aria-current=\"page\"" if c == chemin else ""}>{t}</a>' for c, t in PAGES[1:])
@@ -55,7 +55,7 @@ def page(chemin, titre, description, corps, script=''):
 ACCUEIL = f'''<section class="hero"><div class="wrap">
   <div>
     <h1>Laissez le travail à la porte.</h1>
-    <p class="lead">Chaque soir, Catherine vous accueille au vestibule : une minute pour déposer le travail, voir ce qu'il faut pour demain à l'école, et penser à quelqu'un qui compte.</p>
+    <p class="lead">Chaque soir, Charlotte vous accueille au vestibule : une minute pour déposer le travail, voir ce qu'il faut pour demain à l'école, et penser à quelqu'un qui compte.</p>
     <div class="actions"><a class="btn plein" href="{APP}">Essayer 30 jours gratuitement</a><a class="btn clair" href="/comment-ca-marche">Comment ça marche</a></div>
   </div>
   <div class="carte" aria-label="Exemple de soirée">
@@ -65,7 +65,7 @@ ACCUEIL = f'''<section class="hero"><div class="wrap">
     <p class="etape"><b>2</b> Demain à la maison</p>
     <ul><li>Jour de bibliothèque : rapporter le livre (Léa)</li><li>Vêtements d'éducation physique (Hugo)</li><li class="alerte">Sortie hâtive jeudi à 14 h 30 : vous avez un appel à 14 h</li></ul>
     <p class="etape"><b>3</b> Un moment ce soir</p>
-    <div class="dit">{LUCIE}<div class="bulle"><small>Catherine vous suggère</small>Aujourd'hui, c'était la sortie au musée. Demandez à Léa ce qu'elle a préféré.</div></div>
+    <div class="dit">{LUCIE}<div class="bulle"><small>Charlotte vous suggère</small>Aujourd'hui, c'était la sortie au musée. Demandez à Léa ce qu'elle a préféré.</div></div>
     <p class="exemple">Exemple</p>
   </div>
 </div></section>
@@ -73,9 +73,9 @@ ACCUEIL = f'''<section class="hero"><div class="wrap">
 <section class="bande"><div class="wrap">
   <h2>Les courriels de l'école, enfin à leur place</h2>
   <div class="grille">
-    <div class="bloc"><div class="num">L'école</div><h3>Rien à recopier</h3><p>Les courriels de l'école sont transférés à l'adresse de votre famille. Catherine en retire les dates, les choses à apporter, les formulaires et les paiements.</p></div>
+    <div class="bloc"><div class="num">L'école</div><h3>Rien à recopier</h3><p>Les courriels de l'école sont transférés à l'adresse de votre famille. Charlotte en retire les dates, les choses à apporter, les formulaires et les paiements.</p></div>
     <div class="bloc"><div class="num">Les photos</div><h3>La feuille du sac à dos</h3><p>Une photo de l'avis papier, ou une capture de Mozaïk ou de Clic école, et c'est noté.</p></div>
-    <div class="bloc"><div class="num">L'agenda</div><h3>Les conflits, d'avance</h3><p>Une sortie hâtive pendant une réunion? Catherine vous le dit la veille. Les congés et journées pédagogiques arrivent aussi d'avance.</p></div>
+    <div class="bloc"><div class="num">L'agenda</div><h3>Les conflits, d'avance</h3><p>Une sortie hâtive pendant une réunion? Charlotte vous le dit la veille. Les congés et journées pédagogiques arrivent aussi d'avance.</p></div>
     <div class="bloc"><div class="num">À deux</div><h3>Le coparent voit tout</h3><p>Chacun peut prendre un élément : « je m'occupe du formulaire ». La charge mentale se partage enfin.</p></div>
   </div>
 </div></section>
@@ -83,7 +83,7 @@ ACCUEIL = f'''<section class="hero"><div class="wrap">
 <section class="bande teinte"><div class="wrap">
   <div class="grille trois">
     <div><h2>Une minute, pas plus</h2><p>Un rappel à l'heure où vous quittez le travail, et un autre le matin seulement si quelque chose doit partir avec un enfant.</p></div>
-    <div><h2>Les gens qui comptent</h2><p>Notez ce que vous voulez dire à votre père ou demander à une amie : Catherine vous le rappelle au bon moment. Sans culpabilité si ce n'est pas ce soir.</p></div>
+    <div><h2>Les gens qui comptent</h2><p>Notez ce que vous voulez dire à votre père ou demander à une amie : Charlotte vous le rappelle au bon moment. Sans culpabilité si ce n'est pas ce soir.</p></div>
     <div><h2>Vos données restent à vous</h2><p>Le texte des courriels n'est pas conservé : seulement les dates et les choses à faire. Ce que vous déposez du travail reste privé, même pour le coparent.</p></div>
   </div>
 </div></section>
@@ -101,12 +101,12 @@ COMMENT = f'''<section class="bande"><div class="wrap narrow prose">
     <div class="bloc"><div class="num">1</div><h3>Créez votre foyer</h3><p>Connectez-vous avec votre compte L’Établi, entrez le prénom des enfants et l'heure où finit votre journée.</p></div>
     <div class="bloc"><div class="num">2</div><h3>Branchez l'école</h3><p>Dans Gmail ou Outlook, un filtre transfère les courriels de l'école à l'adresse de votre famille. L'app vous guide pas à pas.</p></div>
     <div class="bloc"><div class="num">3</div><h3>Invitez le coparent</h3><p>Avec son cellulaire. Vous voyez les mêmes éléments, et chacun peut en prendre un.</p></div>
-    <div class="bloc"><div class="num">4</div><h3>Chaque soir, une minute</h3><p>Catherine vous fait signe : déposer le travail, demain à la maison, un moment pour quelqu'un.</p></div>
+    <div class="bloc"><div class="num">4</div><h3>Chaque soir, une minute</h3><p>Charlotte vous fait signe : déposer le travail, demain à la maison, un moment pour quelqu'un.</p></div>
   </div>
   <h2>Les messages qui n'arrivent pas par courriel</h2>
-  <p>Bien des écoles du Québec passent par Mozaïk Portail ou Clic école. Faites une capture d'écran du message, ou prenez en photo la feuille du sac à dos, et ajoutez-la dans l'onglet École : Catherine la lit de la même façon.</p>
+  <p>Bien des écoles du Québec passent par Mozaïk Portail ou Clic école. Faites une capture d'écran du message, ou prenez en photo la feuille du sac à dos, et ajoutez-la dans l'onglet École : Charlotte la lit de la même façon.</p>
   <h2>Votre agenda</h2>
-  <p>Collez l'adresse secrète iCal de votre agenda (Google, Outlook ou Apple) pour que Catherine repère les conflits avec l'école. Et abonnez-vous au calendrier de l'école de votre famille pour le voir dans votre propre agenda.</p>
+  <p>Collez l'adresse secrète iCal de votre agenda (Google, Outlook ou Apple) pour que Charlotte repère les conflits avec l'école. Et abonnez-vous au calendrier de l'école de votre famille pour le voir dans votre propre agenda.</p>
   <h2>Installer l'app</h2>
   <p><strong>iPhone</strong> : ouvrez <a href="{APP}">app.levestibule.ai</a> dans Safari, touchez le bouton Partager, puis « Sur l'écran d'accueil ». Ouvrez l'app depuis son icône pour recevoir les rappels.</p>
   <p><strong>Android</strong> : ouvrez l'adresse dans Chrome, puis le menu ⋮ et « Installer l'application ».</p>
@@ -116,12 +116,12 @@ COMMENT = f'''<section class="bande"><div class="wrap narrow prose">
 </div></section>'''
 
 LUCIE_PAGE = f'''<section class="bande"><div class="wrap">
-  <div class="catherine-grand">{LUCIE}<div class="prose">
-    <h1>Voici Catherine</h1>
-    <p>Catherine est le personnage du Vestibule. Elle vous attend chaque soir à la porte, pendant que vous enlevez vos bottes : douce, attentive, et très bien organisée.</p>
+  <div class="charlotte-grand">{LUCIE}<div class="prose">
+    <h1>Voici Charlotte</h1>
+    <p>Charlotte est le personnage du Vestibule. Elle vous attend chaque soir à la porte, pendant que vous enlevez vos bottes : douce, attentive, et très bien organisée.</p>
     <p>Elle a lu les courriels de l'école pour vous, sait ce qui doit partir dans les sacs demain et se souvient que vous vouliez appeler votre père. Elle ne fait jamais la morale : si ce n'est pas ce soir, ce sera un autre soir.</p>
-    <p>Catherine fait partie de la famille des personnages de L’Établi, avec Simon du Pourquoi, LP du Tiroir, Colette du Plumeau et les autres.</p>
-    <p><a class="btn plein" href="{APP}">Rencontrer Catherine</a></p>
+    <p>Charlotte fait partie de la famille des personnages de L’Établi, avec Simon du Pourquoi, LP du Tiroir, Colette du Plumeau et les autres.</p>
+    <p><a class="btn plein" href="{APP}">Rencontrer Charlotte</a></p>
   </div></div>
 </div></section>'''
 
@@ -133,7 +133,7 @@ QR = [
  ("Et Mozaïk ou Clic école?", "Si l'école vous écrit aussi par courriel, le filtre suffit. Sinon, faites une capture d'écran du message et ajoutez-la dans l'onglet École."),
  ("Mon coparent voit-il tout?", "Il voit l'école, les achats et les gens à qui penser. Ce que vous déposez du travail et l'adresse de votre agenda restent à vous seul."),
  ("Les rappels arrivent quand?", "Du lundi au vendredi, à l'heure où finit votre journée de travail (le dimanche aussi s'il y a quelque chose pour lundi). Le matin vers 7 h, seulement si quelque chose doit partir avec un enfant. Sur iPhone, ouvrez l'app depuis l'écran d'accueil pour les recevoir."),
- ("Et si Catherine se trompe?", "Une lecture automatique peut mal comprendre une date. Chaque élément montre d'où il vient; vous pouvez le corriger, le cocher ou le supprimer en un geste."),
+ ("Et si Charlotte se trompe?", "Une lecture automatique peut mal comprendre une date. Chaque élément montre d'où il vient; vous pouvez le corriger, le cocher ou le supprimer en un geste."),
  ("Comment vous joindre?", f"Écrivez-nous à {COURRIEL}."),
 ]
 QUESTIONS = '<section class="bande"><div class="wrap narrow"><h1>Questions</h1>' + ''.join(f'<details><summary>{q}</summary><p>{r}</p></details>' for q, r in QR) + f'<p style="margin-top:24px"><a class="btn plein" href="{APP}">Ouvrir l\'app</a></p></div></section>'
@@ -144,7 +144,7 @@ ACHAT = f'''<section class="bande"><div class="wrap">
   <div class="achat">
     <div class="bloc">
       <h3>Ce qui est inclus</h3>
-      <ul><li>Jusqu'à 4 personnes dans le foyer</li><li>Lecture des courriels, photos et captures de l'école</li><li>Rappels du soir et du matin</li><li>Conflits avec votre agenda, calendrier de l'école dans le vôtre</li><li>Catherine, en français</li></ul>
+      <ul><li>Jusqu'à 4 personnes dans le foyer</li><li>Lecture des courriels, photos et captures de l'école</li><li>Rappels du soir et du matin</li><li>Conflits avec votre agenda, calendrier de l'école dans le vôtre</li><li>Charlotte, en français</li></ul>
       <h3>Comment ça marche</h3>
       <ol><li><b>Ouvrez cette page depuis l'app</b> : le bouton « Acheter » indique votre foyer.</li><li><b>Payez par carte</b> sur la page sécurisée de Stripe. Vous recevez un reçu par courriel.</li><li><b>Revenez dans l'app</b> : votre foyer est activé pour 12 mois, tout seul.</li></ol>
     </div>
@@ -216,14 +216,14 @@ COND = f'''<section class="bande"><div class="wrap narrow prose">
 INTROUVABLE = f'''<section class="bande"><div class="wrap narrow" style="text-align:center">
   <div style="width:110px;margin:0 auto 12px">{LUCIE}</div>
   <h1>Cette porte ne mène nulle part</h1>
-  <p>La page a peut-être changé d'adresse. Catherine vous attend quand même à l'entrée.</p>
+  <p>La page a peut-être changé d'adresse. Charlotte vous attend quand même à l'entrée.</p>
   <p><a class="btn plein" href="{APP}">Ouvrir l'app</a> <a class="btn clair" href="/">Retour à l'accueil</a></p>
 </div></section>'''
 
 FICHIERS = {
-  'index.html': page('/', "Le Vestibule : une minute entre le travail et la maison", "Chaque soir, Catherine vous aide à déposer le travail, voir ce qu'il faut pour l'école demain et penser à quelqu'un qui compte. 30 jours gratuits.", ACCUEIL),
+  'index.html': page('/', "Le Vestibule : une minute entre le travail et la maison", "Chaque soir, Charlotte vous aide à déposer le travail, voir ce qu'il faut pour l'école demain et penser à quelqu'un qui compte. 30 jours gratuits.", ACCUEIL),
   'comment-ca-marche.html': page('/comment-ca-marche', "Comment ça marche · Le Vestibule", "Les courriels de l'école transférés, les photos du sac à dos, votre agenda et le coparent : la mise en place en quatre étapes.", COMMENT),
-  'catherine.html': page('/catherine', "Catherine · Le Vestibule", "Catherine, celle qui vous attend chaque soir à la porte.", LUCIE_PAGE),
+  'charlotte.html': page('/charlotte', "Charlotte · Le Vestibule", "Charlotte, celle qui vous attend chaque soir à la porte.", LUCIE_PAGE),
   'questions.html': page('/questions', "Questions · Le Vestibule", "Prix, compte, courriels de l'école, Mozaïk, coparent, rappels : les réponses aux questions fréquentes.", QUESTIONS),
   'achat.html': page('/achat', "Acheter · Le Vestibule", f"{PRIX} par année pour toute la famille, après 30 jours gratuits.", ACHAT, ACHAT_JS),
   'confidentialite.html': page('/confidentialite', "Confidentialité · Le Vestibule", "Le texte des courriels n'est pas conservé : ce que Le Vestibule garde, et ce qu'il ne garde pas.", CONFID),
@@ -237,6 +237,6 @@ for nom, html in FICHIERS.items():
 with open(os.path.join(SORTIE, 'robots.txt'), 'w') as f:
     f.write('User-agent: *\nAllow: /\nSitemap: https://levestibule.ai/sitemap.xml\n')
 with open(os.path.join(SORTIE, 'sitemap.xml'), 'w') as f:
-    urls = ''.join(f'<url><loc>https://levestibule.ai{c if c != "/" else "/"}</loc></url>' for c in ['/', '/comment-ca-marche', '/catherine', '/questions', '/achat', '/confidentialite', '/conditions'])
+    urls = ''.join(f'<url><loc>https://levestibule.ai{c if c != "/" else "/"}</loc></url>' for c in ['/', '/comment-ca-marche', '/charlotte', '/questions', '/achat', '/confidentialite', '/conditions'])
     f.write(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>\n')
 print('Site généré :', ', '.join(FICHIERS))

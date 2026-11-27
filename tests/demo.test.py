@@ -25,7 +25,7 @@ with sync_playwright() as p:
     pg.route(U + '/site.css', lambda r: r.fulfill(path=os.path.join(ROOT, 'site', 'site.css'), content_type='text/css'))
     pg.goto(U + '/#ce-soir'); pg.wait_for_selector('.hero h1')
     check('Laissez le travail ici.' in pg.inner_text('.hero h1'), 'écran Ce soir')
-    check('Catherine vous suggère' in pg.inner_text('.moment'), 'Catherine propose un moment')
+    check('Charlotte vous suggère' in pg.inner_text('.moment'), 'Charlotte propose un moment')
     pg.screenshot(path=f'{OUT}/mobile-ce-soir.png', full_page=True)
     pg.fill('#depot', 'Rappeler le fournisseur'); pg.click('[data-a=deposer]')
     check('Rappeler le fournisseur' in pg.inner_text('main'), 'dépôt du travail')
@@ -51,7 +51,7 @@ with sync_playwright() as p:
     pg.set_viewport_size({'width': 360, 'height': 740}); pg.goto(U + '/#ce-soir'); pg.wait_for_timeout(150)
     check(pg.evaluate('document.documentElement.scrollWidth') <= 360, 'rien ne déborde à 360 px')
     # Site
-    for nom in ['index', 'comment-ca-marche', 'catherine', 'questions', 'achat', 'confidentialite', 'conditions', '404']:
+    for nom in ['index', 'comment-ca-marche', 'charlotte', 'questions', 'achat', 'confidentialite', 'conditions', '404']:
         pg.set_viewport_size({'width': 390, 'height': 844})
         pg.goto(f'{U}/site/{nom}.html'); pg.wait_for_timeout(80)
         check(pg.evaluate('document.documentElement.scrollWidth') <= 390 and len(pg.inner_text('main')) > 100, f'site : {nom}')

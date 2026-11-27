@@ -77,7 +77,7 @@ async function envoyer() {
       if (semaineOk && !(await dejaEnvoye(m.user_id, auj, "soir"))) {
         n += await pousser(m.user_id, {
           title: "Le Vestibule",
-          body: choses ? `Catherine : demain, ${pluriel(choses, "chose", "choses")} à préparer. Une minute, puis la maison.` : "Catherine : une minute pour déposer le travail, puis la maison.",
+          body: choses ? `Charlotte : demain, ${pluriel(choses, "chose", "choses")} à préparer. Une minute, puis la maison.` : "Charlotte : une minute pour déposer le travail, puis la maison.",
           url: "./#ce-soir",
         });
       }
@@ -113,6 +113,6 @@ Deno.serve(async (req: Request) => {
   const { data: m } = await sb.from("membres").select("user_id").eq("id", moi || "").maybeSingle();
   if (!m?.user_id) return json({ erreur: "Accès réservé aux membres." }, 403);
   if (b.action === "cle") return json({ cle: c.vapid_public });
-  if (b.action === "test") return json({ envoyees: await pousser(m.user_id, { title: "Le Vestibule", body: "C'est réglé : Catherine vous fera signe à la fin de votre journée.", url: "./#ce-soir" }) });
+  if (b.action === "test") return json({ envoyees: await pousser(m.user_id, { title: "Le Vestibule", body: "C'est réglé : Charlotte vous fera signe à la fin de votre journée.", url: "./#ce-soir" }) });
   return json({ erreur: "Action inconnue" }, 400);
 });

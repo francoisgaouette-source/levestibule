@@ -1,4 +1,4 @@
-// Le Vestibule (HoldingAI) : une minute entre le travail et la maison, avec Catherine.
+// Le Vestibule (HoldingAI) : une minute entre le travail et la maison, avec Charlotte.
 // Sans Supabase configuré (config.js), l'app tourne en mode démo, avec des données d'exemple gardées sur l'appareil.
 // Compte HoldingAI obligatoire (compte.js). Essai de 30 jours, puis 19,99 $ par année pour le foyer.
 (function () {
@@ -17,7 +17,7 @@
   const dans = (s) => Math.round((new Date(s + "T12:00:00") - new Date(AUJ + "T12:00:00")) / 864e5);
   const hm = (t) => (t || "").slice(0, 5);
   const uid = () => (crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2));
-  const LUCIE = `<svg class="catherine" viewBox="0 0 64 64" aria-hidden="true"><path d="M9 36C9 19 19 8 32 8s23 11 23 28v16H9z" fill="#7a3b2e"/><circle cx="32" cy="35" r="17" fill="#f2c49b"/><path d="M15 31c2-11 9-16 17-16s15 5 17 14c-7-1-13-5-16-10-4 7-11 11-18 12z" fill="#7a3b2e"/><circle cx="26" cy="36" r="2.1" fill="#191714"/><circle cx="38" cy="36" r="2.1" fill="#191714"/><path d="M27 44q5 4 10 0" fill="none" stroke="#191714" stroke-width="2.2" stroke-linecap="round"/><circle cx="21" cy="42" r="2.6" fill="#e8462a" opacity=".3"/><circle cx="43" cy="42" r="2.6" fill="#e8462a" opacity=".3"/><path d="M17 58q15-9 30 0v6H17z" fill="#f0725c"/></svg>`;
+  const LUCIE = `<svg class="charlotte" viewBox="0 0 64 64" aria-hidden="true"><path d="M9 36C9 19 19 8 32 8s23 11 23 28v16H9z" fill="#7a3b2e"/><circle cx="32" cy="35" r="17" fill="#f2c49b"/><path d="M15 31c2-11 9-16 17-16s15 5 17 14c-7-1-13-5-16-10-4 7-11 11-18 12z" fill="#7a3b2e"/><circle cx="26" cy="36" r="2.1" fill="#191714"/><circle cx="38" cy="36" r="2.1" fill="#191714"/><path d="M27 44q5 4 10 0" fill="none" stroke="#191714" stroke-width="2.2" stroke-linecap="round"/><circle cx="21" cy="42" r="2.6" fill="#e8462a" opacity=".3"/><circle cx="43" cy="42" r="2.6" fill="#e8462a" opacity=".3"/><path d="M17 58q15-9 30 0v6H17z" fill="#f0725c"/></svg>`;
   let prenomCompte = "";
   const GENRE = { activite: "Activité", apporter: "À apporter", formulaire: "Formulaire", payer: "À payer", conge: "Congé" };
   const fuseauAppareil = () => { try { return Intl.DateTimeFormat().resolvedOptions().timeZone || "America/Toronto"; } catch (e) { return "America/Toronto"; } };
@@ -254,8 +254,8 @@
       ${vide ? `<p class="muted">Rien pour demain. Bonne soirée.</p>` : ""}
       ${cal ? `<p class="muted" style="margin-top:8px">Votre calendrier demain : ${cal.length ? esc(cal.filter((v) => !v.journee).slice(0, 4).map((v) => v.debut + " " + v.titre).join(", ") || "rien d'heure fixe") : "rien"}</p>` : calErr ? `<p class="muted">${esc(calErr)}</p>` : ""}</div>
     <div class="card"><h2><span class="n">3</span>Un moment ce soir</h2>
-      ${m ? `<div class="moment">${LUCIE}<div><div class="qui">Catherine vous suggère</div>${esc(m.texte)}<div class="why">${esc(m.pourquoi)}</div></div></div><div class="row"><button data-a="m-fait" data-cle="${esc(m.cle)}">C'est fait</button><button class="ghost" data-a="m-pas" data-cle="${esc(m.cle)}">Pas ce soir</button></div>`
-        : `<p class="muted">Ajoutez quelqu'un dans Gens, ou laissez l'école me donner des idées. — Catherine</p>`}</div>`;
+      ${m ? `<div class="moment">${LUCIE}<div><div class="qui">Charlotte vous suggère</div>${esc(m.texte)}<div class="why">${esc(m.pourquoi)}</div></div></div><div class="row"><button data-a="m-fait" data-cle="${esc(m.cle)}">C'est fait</button><button class="ghost" data-a="m-pas" data-cle="${esc(m.cle)}">Pas ce soir</button></div>`
+        : `<p class="muted">Ajoutez quelqu'un dans Gens, ou laissez l'école me donner des idées. — Charlotte</p>`}</div>`;
   }
 
   function vueEcole() {
@@ -286,7 +286,7 @@
   }
 
   function vueGens() {
-    return `<div class="card"><h2>Les gens qui comptent</h2><p class="muted">Notez ce que vous voulez leur dire ou leur demander. Catherine vous le rappellera au bon moment.</p>
+    return `<div class="card"><h2>Les gens qui comptent</h2><p class="muted">Notez ce que vous voulez leur dire ou leur demander. Charlotte vous le rappellera au bon moment.</p>
       <div class="row"><input id="g-n" placeholder="Nom" style="flex:0 1 140px" maxlength="60"><input id="g-t" placeholder="Lui demander comment s'est passée l'entrevue" maxlength="300"><button data-a="g-ajout">Ajouter</button></div>
       <ul class="list" style="margin-top:8px">${S.gens.map((g) => `<li><div class="grow"><div class="t">${esc(g.nom)}</div><div>${esc(g.note)}</div>${g.dernier ? `<div class="muted">Dernier moment : ${esc(fmt(g.dernier))}</div>` : ""}</div><button class="icon" data-a="g-suppr" data-id="${esc(g.id)}" aria-label="Supprimer">×</button></li>`).join("")}</ul></div>`;
   }
@@ -336,12 +336,12 @@
   }
 
   function vueAccueil(etat) {
-    if (etat === "creer") return `<section class="accueil">${LUCIE}<h1>Bienvenue au vestibule.</h1><p class="grand">Je suis Catherine. Chaque soir, une minute entre le travail et la maison. Commençons par la famille : l'essai est gratuit pendant 30 jours.</p>
+    if (etat === "creer") return `<section class="accueil">${LUCIE}<h1>Bienvenue au vestibule.</h1><p class="grand">Je suis Charlotte. Chaque soir, une minute entre le travail et la maison. Commençons par la famille : l'essai est gratuit pendant 30 jours.</p>
       <form id="f-foyer"><label for="c-prenom">Votre prénom</label><input id="c-prenom" required maxlength="40" autocomplete="given-name" value="${esc(prenomCompte)}">
       <label for="c-enf">Prénoms des enfants (séparés par des virgules)</label><input id="c-enf" placeholder="Léa, Hugo" maxlength="200">
       <div class="row"><button type="submit">C'est parti</button></div></form><p class="status">${esc(statut)}</p>
       <p class="muted">Votre coparent vous a invité? Connectez-vous avec le même cellulaire que celui qu'il a inscrit. <button class="lien" data-a="deconnexion">Changer de compte</button></p></section>`;
-    return `<section class="accueil">${LUCIE}<h1>Le Vestibule</h1><p class="grand">Laissez le travail à la porte. L'école, le calendrier et les gens qui comptent, en une minute chaque soir, avec Catherine.</p>
+    return `<section class="accueil">${LUCIE}<h1>Le Vestibule</h1><p class="grand">Laissez le travail à la porte. L'école, le calendrier et les gens qui comptent, en une minute chaque soir, avec Charlotte.</p>
       <div class="row"><button data-a="connexion">Continuer avec L’Établi</button></div><p class="status">${esc(statut)}</p>
       <p class="muted">Le même compte que vos autres apps de L’Établi.</p></section>`;
   }
@@ -353,7 +353,7 @@
     if (!vues[onglet]) onglet = "ce-soir";
     const titre = onglet === "ce-soir" ? "Laissez le travail ici." : ONGLETS.find((o) => o[0] === onglet)[1];
     const prenom = S.moi && S.moi.prenom;
-    $app.innerHTML = `<header class="hero">${DEMO ? "" : `<button type="button" class="hai-porte-btn" data-hai-porte aria-label="Mon compte (Albert, L’Établi)" title="Mon compte"></button>`}<p>${esc(salut + (prenom && prenom !== "Moi" ? ", " + prenom : ""))} · ${esc(fmt(AUJ))}</p><h1>${esc(titre)}</h1><p>${onglet === "ce-soir" ? "Une minute, puis la maison." : "Le Vestibule, avec Catherine"}</p>
+    $app.innerHTML = `<header class="hero">${DEMO ? "" : `<button type="button" class="hai-porte-btn" data-hai-porte aria-label="Mon compte (Albert, L’Établi)" title="Mon compte"></button>`}<p>${esc(salut + (prenom && prenom !== "Moi" ? ", " + prenom : ""))} · ${esc(fmt(AUJ))}</p><h1>${esc(titre)}</h1><p>${onglet === "ce-soir" ? "Une minute, puis la maison." : "Le Vestibule, avec Charlotte"}</p>
       <svg viewBox="0 0 150 130" aria-hidden="true"><rect x="62" y="18" width="62" height="112" rx="4" fill="rgba(255,255,255,.12)"/><rect x="70" y="26" width="46" height="104" fill="#fbd9a8" class="lamp"/><path d="M70 26 L52 34 L52 130 L70 130 Z" fill="rgba(255,255,255,.22)"/><circle cx="57" cy="84" r="2.5" fill="#fff"/><path d="M116 130 L150 130 L150 96 Z" fill="rgba(251,217,168,.25)" class="lamp"/><circle cx="135" cy="22" r="6" fill="#f0725c"/></svg></header>
       ${DEMO ? `<div class="bandeau"><span>Mode démo : données d'exemple sur cet appareil.</span></div>` : bandeauForfait()}
       <main>${vues[onglet]()}</main>

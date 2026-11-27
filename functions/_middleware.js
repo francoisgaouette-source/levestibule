@@ -3,7 +3,7 @@
 // - app.levestibule.ai (et le-vestibule.pages.dev) : l'app (web/)
 // www.levestibule.ai redirige vers levestibule.ai.
 const PAGES = {
-  "/": "/site/", "/comment-ca-marche": "/site/comment-ca-marche", "/catherine": "/site/catherine", "/lucie": "/site/catherine", "/questions": "/site/questions",
+  "/": "/site/", "/comment-ca-marche": "/site/comment-ca-marche", "/charlotte": "/site/charlotte", "/lucie": "/site/charlotte", "/catherine": "/site/charlotte", "/questions": "/site/questions",
   "/achat": "/site/achat", "/confidentialite": "/site/confidentialite", "/conditions": "/site/conditions",
 };
 const FICHIERS = ["/site.css", "/favicon.png", "/robots.txt", "/sitemap.xml"];

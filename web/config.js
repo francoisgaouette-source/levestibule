@@ -3,7 +3,7 @@
 // Compte HoldingAI obligatoire, comme toutes les apps HoldingAI. Essai de 30 jours, puis 19,99 $ par année pour le foyer.
 window.VESTIBULE_CONFIG = {
   nom: "Le Vestibule",
-  personnage: "Catherine",
+  personnage: "Charlotte",
   supabaseUrl: "https://jjvwwstovcrqodridfuu.supabase.co", // projet Supabase « Le Vestibule »
   supabaseAnonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impqdnd3c3RvdmNycW9kcmlkZnV1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTU2MzgzNzksImV4cCI6MjExMTIxNDM3OX0.3B9X-uQeAJDDBBoqjQyZEY_NQHwk8Po6BRKQXQOA74I", // clé publique : la sécurité vient des règles de la base
   domaineCourriel: "levestibule.ai", // adresses de transfert : famille-<code>@levestibule.ai
