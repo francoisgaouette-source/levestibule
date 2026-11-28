@@ -1,5 +1,5 @@
 // Le Vestibule : compte HoldingAI obligatoire (norme commune à toutes les apps HoldingAI).
-// Démarrage commun (holdingai.js) : retour de chez Albert, puis le compte suit. Sans session : barrière d'Albert (porte.js).
+// Démarrage commun (holdingai.js) : retour de chez Philippe, puis le compte suit. Sans session : barrière de Philippe (porte.js).
 // app.js attend window.VESTIBULE_DEMARRAGE pour savoir qui est connecté.
 window.VESTIBULE_DEMARRAGE = (async () => {
   "use strict";

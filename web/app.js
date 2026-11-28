@@ -353,7 +353,7 @@
     if (!vues[onglet]) onglet = "ce-soir";
     const titre = onglet === "ce-soir" ? "Laissez le travail ici." : ONGLETS.find((o) => o[0] === onglet)[1];
     const prenom = S.moi && S.moi.prenom;
-    $app.innerHTML = `<header class="hero">${DEMO ? "" : `<button type="button" class="hai-porte-btn" data-hai-porte aria-label="Mon compte (Albert, L’Établi)" title="Mon compte"></button>`}<p>${esc(salut + (prenom && prenom !== "Moi" ? ", " + prenom : ""))} · ${esc(fmt(AUJ))}</p><h1>${esc(titre)}</h1><p>${onglet === "ce-soir" ? "Une minute, puis la maison." : "Le Vestibule, avec Charlotte"}</p>
+    $app.innerHTML = `<header class="hero">${DEMO ? "" : `<button type="button" class="hai-porte-btn" data-hai-porte aria-label="Mon compte (Philippe, L’Établi)" title="Mon compte"></button>`}<p>${esc(salut + (prenom && prenom !== "Moi" ? ", " + prenom : ""))} · ${esc(fmt(AUJ))}</p><h1>${esc(titre)}</h1><p>${onglet === "ce-soir" ? "Une minute, puis la maison." : "Le Vestibule, avec Charlotte"}</p>
       <svg viewBox="0 0 150 130" aria-hidden="true"><rect x="62" y="18" width="62" height="112" rx="4" fill="rgba(255,255,255,.12)"/><rect x="70" y="26" width="46" height="104" fill="#fbd9a8" class="lamp"/><path d="M70 26 L52 34 L52 130 L70 130 Z" fill="rgba(255,255,255,.22)"/><circle cx="57" cy="84" r="2.5" fill="#fff"/><path d="M116 130 L150 130 L150 96 Z" fill="rgba(251,217,168,.25)" class="lamp"/><circle cx="135" cy="22" r="6" fill="#f0725c"/></svg></header>
       ${DEMO ? `<div class="bandeau"><span>Mode démo : données d'exemple sur cet appareil.</span></div>` : bandeauForfait()}
       <main>${vues[onglet]()}</main>
@@ -516,7 +516,7 @@
   (async () => {
     if (DEMO) { await charger(); rendre(); return; }
     const dep = await (window.VESTIBULE_DEMARRAGE || Promise.resolve({}));
-    if (dep && dep.redirection) return; // on part chez Albert (compte HoldingAI) et on revient
+    if (dep && dep.redirection) return; // on part chez Philippe (compte HoldingAI) et on revient
     const s = await HoldingAI.session();
     if (!s) { S = null; statut = dep && dep.erreur ? "La connexion n'a pas fonctionné. Réessayez." : ""; rendre(); return; }
     prenomCompte = s.nom || "";
