@@ -19,7 +19,7 @@ async function cles() {
     await db.from("push_cles").upsert([{ nom: "vapid_public", valeur: k.publicKey }, { nom: "vapid_prive", valeur: k.privateKey }]);
     c.vapid_public = k.publicKey; c.vapid_prive = k.privateKey;
   }
-  webpush.setVapidDetails("mailto:" + (Deno.env.get("COURRIEL_CONTACT") || "bonjour@holdingai.app"), c.vapid_public, c.vapid_prive);
+  webpush.setVapidDetails("mailto:" + (Deno.env.get("COURRIEL_CONTACT") || "bonjour@letabli.ai"), c.vapid_public, c.vapid_prive);
   return c;
 }
 
