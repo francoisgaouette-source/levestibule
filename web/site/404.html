@@ -16,9 +16,10 @@
 <link rel="stylesheet" href="/site.css">
 </head>
 <body>
-<header class="nav"><div class="wrap">
-  <a class="logo" href="/"><img class="charlotte" src="/charlotte-tete.webp" alt="" width="320" height="320">Le Vestibule</a>
-  <nav class="liens" aria-label="Site"><a href="/comment-ca-marche">Comment ça marche</a><a href="/charlotte">Charlotte</a><a href="/questions">Questions</a><a href="/achat">Prix</a><a class="ouvrir" href="https://app.levestibule.ai">Ouvrir l'app</a></nav>
+<header id="entete" class="nav"><div class="wrap">
+  <a class="logo" href="/"><svg class="symbole" viewBox="0 0 512 512" width="32" height="32" aria-hidden="true"><rect width="512" height="512" rx="112" fill="#234E6B"/><rect x="176" y="112" width="200" height="300" rx="10" fill="#ffffff" fill-opacity=".14"/><rect x="200" y="136" width="152" height="276" fill="#FBD9A8"/><path d="M200 136 L140 162 L140 412 L200 412 Z" fill="#ffffff" fill-opacity=".3"/><circle cx="158" cy="290" r="9" fill="#fff"/><rect x="96" y="404" width="320" height="16" rx="8" fill="#F0725C"/></svg>Le Vestibule</a>
+  <nav id="menu" class="liens" aria-label="Sections"><a href="/#comment">Comment ça marche</a><a href="/#personnage">Charlotte</a><a href="/#prix">Prix</a><a href="/#questions">Questions</a></nav>
+  <div class="droite"><a class="connexion" href="https://app.levestibule.ai">Se connecter</a><a class="ouvrir" href="https://app.levestibule.ai">Essayer</a><button type="button" class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button></div>
 </div></header>
 <main>
 <section class="bande"><div class="wrap narrow" style="text-align:center">
@@ -28,10 +29,20 @@
   <p><a class="btn plein" href="https://app.levestibule.ai">Ouvrir l'app</a> <a class="btn clair" href="/">Retour à l'accueil</a></p>
 </div></section>
 </main>
-<footer><div class="wrap">
-  <span>© 2026 Le Vestibule, une app de L’Établi (Les Stratégies Vortex Inc.) · Fait au Québec</span>
-  <nav aria-label="Pied de page"><a href="/questions">Questions</a><a href="/confidentialite">Confidentialité</a><a href="/conditions">Conditions</a><a href="mailto:bonjour@levestibule.ai">bonjour@levestibule.ai</a></nav>
+<footer id="pied"><div class="wrap">
+  <div class="signature"><svg class="symbole" viewBox="0 0 512 512" width="32" height="32" aria-hidden="true"><rect width="512" height="512" rx="112" fill="#234E6B"/><rect x="176" y="112" width="200" height="300" rx="10" fill="#ffffff" fill-opacity=".14"/><rect x="200" y="136" width="152" height="276" fill="#FBD9A8"/><path d="M200 136 L140 162 L140 412 L200 412 Z" fill="#ffffff" fill-opacity=".3"/><circle cx="158" cy="290" r="9" fill="#fff"/><rect x="96" y="404" width="320" height="16" rx="8" fill="#F0725C"/></svg><div><div class="sig-nom">Le Vestibule</div><div class="sig-etabli"><svg width="12" height="12" viewBox="0 0 64 64" aria-hidden="true"><rect x="40" y="10" width="14" height="10" rx="2" fill="#B8954A"/><rect x="45" y="20" width="4" height="4" fill="#B8954A"/><rect x="4" y="24" width="56" height="9" rx="2.5" fill="currentColor"/><rect x="10" y="33" width="6" height="25" rx="1.5" fill="currentColor"/><rect x="48" y="33" width="6" height="25" rx="1.5" fill="currentColor"/><rect x="16" y="45" width="32" height="4" fill="currentColor"/><rect x="2" y="27" width="5" height="12" rx="1.5" fill="#B8954A"/></svg>Fait à L'Établi</div></div></div>
+  <nav aria-label="Pied de page"><a href="/confidentialite">Confidentialité</a><a href="/conditions">Conditions</a><a href="mailto:bonjour@levestibule.ai">Nous écrire</a><a href="https://letabli.ai/#apps">Les autres apps de L'Établi</a></nav>
+  <p class="copy">© 2026 L'Établi. Fait au Québec.</p>
 </div></footer>
+<script>
+(function () {
+  // Sur téléphone, les quatre liens du menu se cachent derrière le bouton « Menu »
+  var b = document.querySelector('.menu-btn'), m = document.getElementById('menu');
+  function ouvrir(o) { b.setAttribute('aria-expanded', String(o)); m.classList.toggle('ouvert', o); }
+  b.addEventListener('click', function () { ouvrir(b.getAttribute('aria-expanded') !== 'true'); });
+  m.addEventListener('click', function (e) { if (e.target.tagName === 'A') ouvrir(false); });
+})();
+</script>
 
 </body>
 </html>
